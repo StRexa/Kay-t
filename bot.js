@@ -113,4 +113,12 @@ client.on('error', e => {
     console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
+client.on("guildMemberAdd", member => {
+  member.roles.add("803590514066194432")
+  
+  const kanal = member.guild.channels.cache.get("803588838822903811")
+  
+  kanal.send(`başarıyla otorol verildi.`)
+})
+
 client.login(process.env.TOKEN);
