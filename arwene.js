@@ -51,13 +51,12 @@ client.on("guildMemberAdd", async (member) => {
     "9": `${ayarlar.dokuzEmoji}`
 }
 
-const arwKanal = ayarlar.hosgeldinKanal                                                                              
+const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arwGecen = moment.duration(arwZaman).format(`\`YY [Yıl,] DD [Gün,] HH [Saat,] mm [Dakika,] ss [Saniye]\``) 
-const arw = `hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+const arw = `Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
 if(arwZaman < 1296000000) {
-  arw = `hesabın sunucumuza kayıt olmak için daha çok genç...`
+  arw = `Hesabın sunucumuza kayıt olmak için daha çok genç...`
 }
 const arw2 = [];
 if(db.fetch(`tagliAlim.${member.guild.id}`)) {
@@ -70,11 +69,9 @@ member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
 arwKanal.send(`
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoşgeldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-      ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Hesabın Discord'a katılalı ${arwGecen} olmuş.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
 
-      ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Yani ${arw}
-
-      ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için soldaki ses kanallarına geçip isim yaş söylemen ${arw2} gerek.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için soldaki ses kanallarına geçip isim yaş söylemen ${arw2} gerek.
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın.
 `) 

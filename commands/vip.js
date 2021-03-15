@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json")
 module.exports.run = async (client, message, args) => {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
-    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Vip vermek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 const arwEmbed = new Discord.MessageEmbed()

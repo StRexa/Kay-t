@@ -5,15 +5,15 @@ const db = require("quick.db")
 module.exports.run = async (client, message, args) => {
     if(ayarlar.yetkiliRol.some(arwene => message.member.roles.cache.has(arwene)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
-    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) etiketlenenKişi = message.author
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`${client.emojis.cache.get(ayarlar.yes)} ${etiketlenenKişi} kullanıcısının
-${db.fetch(`kadinTeyit.${etiketlenenKişi.id}`)} kadın,
-${db.fetch(`erkekTeyit.${etiketlenenKişi.id}`)} erkek,
-${db.fetch(`toplamTeyit.${etiketlenenKişi.id}`)} toplam
+${db.fetch(`kadinTeyit.${etiketlenenKişi.id}`) || 0} kadın,
+${db.fetch(`erkekTeyit.${etiketlenenKişi.id}`) || 0} erkek,
+${db.fetch(`toplamTeyit.${etiketlenenKişi.id}`) || 0} toplam
 kaydı var.
 `)
 .setFooter(ayarlar.footer)
