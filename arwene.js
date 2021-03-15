@@ -27,6 +27,10 @@ client.on('message', async message => {
   client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
     message.delete()
   }
+  
+  if(message.content === '.tag') {
+    message.channel.send(`**Shex** / **#1281**`)
+  }
   })
 
 client.on("ready", () => {

@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json")
 
 module.exports.run = async (client, message, args) => {
 
-    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) etiketlenenKişi = message.author
 
 const arwEmbed = new Discord.MessageEmbed()
