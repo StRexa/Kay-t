@@ -1,4 +1,40 @@
 {
-  "prefix" : "!",
-  "sahip" : "527472604810969088"
+    "sahip" : "ID'niz",
+    "prefix" : "Prefixiniz",
+    "footer" : "İsminiz ❤️ Sunucu ismi",
+
+    "tag" : "Tagınız",
+    "sembol" : "Kayıt ederken isim ve yaş arasına koyulacak sembol (yoksa boş bırakın)",
+
+    "yetkiliRol" : ["ID", "ID", "ID"],
+    "vipRol" : "ID",
+    "boosterRol" : "ID",
+    "taglıRol" : "ID",
+    "kayıtsızRol" : "ID",
+    "erkekRol" : ["ID", "ID"],
+    "erkekRol1" : "ID",
+    "erkekRol2" : "ID",
+    "kadınRol" : ["ID", "ID"],
+    "kadınRol1" : "ID",
+    "kadınRol2" : "ID",
+
+    "sifirEmoji" : "ID",
+    "birEmoji" : "ID",
+    "ikiEmoji" : "ID",
+    "ucEmoji" : "ID",
+    "dortEmoji" : "ID",
+    "besEmoji" : "ID",
+    "altiEmoji" : "ID",
+    "yediEmoji" : "ID",
+    "sekizEmoji" : "ID",
+    "dokuzEmoji" : "ID",
+
+    "tagLogKanal" : "ID",
+
+    "hosgeldinKanal" : "ID",
+    "hosgeldinMesajEmoji" : "ID",
+    "rulesKanal" : "ID",
+
+    "yes" : "yes emoji ID",
+    "no" : "no emoji ID"
 }
