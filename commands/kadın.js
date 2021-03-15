@@ -13,20 +13,17 @@ if(db.fetch(`tagliAlim.${message.guild.id}`)) {
 }
 
 const isim = args.splice(1).join(' ')
-const yaş = args[2]
 if(!isim) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir isim belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
-if(!yaş) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir yaş belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
-if(isNaN(yaş)) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Belirttiğin yaş rakamlardan oluşmalı!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 ayarlar.kadınRol.some(arwene2 => etiketlenenKişi.roles.add(arwene2))
 etiketlenenKişi.roles.remove(ayarlar.kayıtsızRol)
-etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}`)
+etiketlenenKişi.setNickname(`${isim} Shex`)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
-.setDescription(`Kullanıcının ismi ${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş} olarak değiştirildi ve <@&${ayarlar.kadınRol1}>, <@&${ayarlar.kadınRol2}> rolleri verildi!`)
+.setDescription(`Kullanıcının ismi \`${isim} Shex\` olarak değiştirildi ve <@&${ayarlar.kadınRol1}>, <@&${ayarlar.kadınRol2}> rolleri verildi!`)
 .setFooter(ayarlar.footer)
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
 .setTimestamp()
@@ -35,7 +32,6 @@ message.channel.send(arwEmbed)
 
 db.push(`isimler.${etiketlenenKişi.id}`, `
 İsim: isim
-Yaş: yaş
 Yetkili: message.author
 `)
 

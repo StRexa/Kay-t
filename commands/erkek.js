@@ -3,7 +3,7 @@ const db = require("quick.db")
 const ayarlar = require("../ayarlar.json")
 
 module.exports.run = async (client, message, args) => {
-    if(ayarlar.yetkiliRol.some(arwene => message.member.roles.cache.has(arwene)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Bu işlemi kullanmak için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+    if(ayarlar.yetkiliRol.some(arwene => message.member.roles.cache.has(arwene)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[1])
 if(!etiketlenenKişi) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
@@ -17,7 +17,7 @@ if(!isim) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.n
 
 ayarlar.erkekRol.some(arwene2 => etiketlenenKişi.roles.add(arwene2))
 etiketlenenKişi.roles.remove(ayarlar.kayıtsızRol)
-etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim}`)
+etiketlenenKişi.setNickname(`${isim} Shex`)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
@@ -32,7 +32,6 @@ message.channel.send(arwEmbed)
 
 db.push(`isimler.${etiketlenenKişi.id}`, `
 İsim: isim
-Yaş: yaş
 Yetkili: message.author
 `)
 
