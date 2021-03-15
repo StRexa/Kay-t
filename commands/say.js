@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json")
 module.exports.run = async (client, message, args) => {
 
 const tag1 = message.guild.members.cache.filter(m => m.user.username.includes("Shex")).size
-const tag2 = message.guild.members.cache.filter(m => m.user.username.tag("#1281")).size
+const tag2 = message.guild.members.cache.filter(m => m.user.tag("1281")).size
 const topSize = tag1 + tag2
   
 let arwSayılar = {
