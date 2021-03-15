@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
 
 const qweArw = args[1];
+if(!qweArw) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **.tagliAlim \`aç\` ya da \`kapat\` yazmalısın!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 if(qweArw === "aç") {
     db.set(`tagliAlim.${message.guild.id}`, true)

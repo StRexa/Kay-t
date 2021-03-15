@@ -31,10 +31,10 @@ const arwEmbed = new Discord.MessageEmbed()
 
 message.channel.send(arwEmbed)
 
-db.push(`isimler.${etiketlenenKişi.id}`, `
-İsim: isim
-Yetkili: message.author
-`)
+db.push(`isimler.${etiketlenenKişi.id}`, {
+İsim: isim,
+Yetkili: message.author.id
+})
 
 db.add(`kadinTeyit.${etiketlenenKişi.id}`, `1`)
 db.add(`toplamTeyit.${etiketlenenKişi.id}`, `1`)

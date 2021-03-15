@@ -4,8 +4,7 @@ const ayarlar = require("../ayarlar.json")
 
 module.exports.run = async (client, message, args) => {
 
-    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-if(!etiketlenenKişi) etiketlenenKişi = message.author
+    const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("2f3136")
@@ -15,7 +14,7 @@ const arwEmbed = new Discord.MessageEmbed()
 
 let isimler = db.get(`isimler.${etiketlenenKişi.id}`) || [];
 isimler = isimler.reverse()
-let isimler2 = isimler.length > 0 ? isimler.map((value) => `${value.İsim} Shex ( ${value.Yetkili} )`).join("\n") : `${client.emojis.cache.get(ayarlar.no)} ${etiketlenenKişi} kullanıcısına ait isim bulunamadı!`
+let isimler2 = isimler.length > 0 ? isimler.map((value) => `${value.İsim} Shex ( <@!${value.Yetkili}> )`).join("\n") : `${client.emojis.cache.get(ayarlar.no)} ${etiketlenenKişi} kullanıcısına ait isim bulunamadı!`
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 

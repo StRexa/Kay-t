@@ -24,10 +24,10 @@ const arwEmbed = new Discord.MessageEmbed()
 
 message.channel.send(arwEmbed)
 
-db.push(`isimler.${etiketlenenKişi.id}`, `
-İsim: isim
-Yetkili: message.author
-`)
+db.push(`isimler.${etiketlenenKişi.id}`, {
+İsim: isim,
+Yetkili: message.author.id
+})
 
 }
 exports.config = {
