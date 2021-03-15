@@ -13,7 +13,7 @@ const arwEmbed = new Discord.MessageEmbed()
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
 .setTimestamp()
 
-if(!etiketlenenKişi.roles.cache.has(ayarlar.vipRol)) return message.channel.send(arwEmbed.setDescription(`Kullanıcıdan başarıyla vip <@&${ayarlar.vipRol}> rolü alındı!`)).then(etiketlenenKişi.roles.remove(ayarlar.vipRol))
+if(etiketlenenKişi.roles.cache.has(ayarlar.vipRol)) return message.channel.send(arwEmbed.setDescription(`Kullanıcıdan başarıyla vip <@&${ayarlar.vipRol}> rolü alındı!`)).then(etiketlenenKişi.roles.remove(ayarlar.vipRol))
 
 etiketlenenKişi.roles.add(ayarlar.vipRol)
 

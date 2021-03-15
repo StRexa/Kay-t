@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 if(!etiketlenenKişi) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 if(db.fetch(`tagliAlim.${message.guild.id}`)) {
-    if(!ayarlar.tagRol.some(arwenefalan => message.member.roles.cache.has(arwenefalan)) && !etiketlenenKişi.roles.cache.has(ayarlar.vipRol) && !etiketlenenKişi.roles.cache.has(ayarlar.boosterRol)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirtilen kişinin kaydı \`booster değil/vip değil/tag almamış\` durumlarından herhangi birinden dolayı gerçekleştirilemedi!**`)
+    if(!etiketlenenKişi.roles.cache.has(ayarlar.tagRol) && !etiketlenenKişi.roles.cache.has(ayarlar.vipRol) && !etiketlenenKişi.roles.cache.has(ayarlar.boosterRol)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirtilen kişinin kaydı \`booster değil/vip değil/tag almamış\` durumlarından herhangi birinden dolayı gerçekleştirilemedi!**`)
 }
 
 const isim = args.splice(1).join(' ')
