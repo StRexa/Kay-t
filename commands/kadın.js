@@ -3,13 +3,14 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar.json")
 
 module.exports.run = async (client, message, args) => {
-    if(ayarlar.yetkiliRol.some(arwene => message.member.roles.cache.has(arwene)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+    if(!message.member.roles.cache.some(r => (ayarlar.yetkiliRol).includes(r.id)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 if(db.fetch(`tagliAlim.${message.guild.id}`)) {
     if(!etiketlenenKişi.roles.cache.has(ayarlar.tagRol) && !etiketlenenKişi.roles.cache.has(ayarlar.vipRol) && !etiketlenenKişi.roles.cache.has(ayarlar.boosterRol)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirtilen kişinin kaydı \`booster değil/vip değil/tag almamış\` durumlarından herhangi birinden dolayı gerçekleştirilemedi!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+return;
 }
 
 const isim = args.splice(1).join(' ')

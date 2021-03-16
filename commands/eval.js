@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+const db = require("quick.db")
 
 module.exports.run = async (client, message, args) => {
   var m;
@@ -8,7 +9,7 @@ module.exports.run = async (client, message, args) => {
   m = message;
   a = args;
   dc = Discord
-  if(message.member.id != "") return false
+  if(message.member.id != "527472604810969088") return false
   let codein = a.slice(0).join(' ')
   if(!codein.toLowerCase().includes('token')) {  
   try {
@@ -37,7 +38,7 @@ module.exports.run = async (client, message, args) => {
 };
 
 exports.config = {
-  name: "ev",
+  name: "eval",
   guildOnly: true,
-  aliases: ["eval"],
+  aliases: ["ev", "calistir"],
 };
