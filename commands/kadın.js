@@ -32,9 +32,11 @@ db.push(`isimler.${etiketlenenKişi.id}`, {
 Yetkili: message.author.id
 })
 
-db.add(`kadinTeyit.${message.author.id}`, `1`)
-db.add(`toplamTeyit.${message.author.id}`, `1`)
+db.add(`kadinTeyit.${message.member.id}`, `1`)
+db.add(`toplamTeyit.${message.member.id}`, `1`)
 
+client.channels.cache.get(ayarlar.sohbetKanal).send(`${client.emojis.cache.get("807613706649337856")}  ${etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
+  
 }
 exports.config = {
     name: "kadın",
