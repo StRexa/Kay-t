@@ -35,7 +35,7 @@ Yetkili: message.author.id
 db.add(`erkekTeyit.${message.member.id}`, `1`)
 db.add(`toplamTeyit.${message.member.id}`, `1`)
 
-client.channels.cache.get(ayarlar.sohbetKanal).send(`${client.emojis.cache.get("821453831745044521")}  ${etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
+client.channels.cache.get(ayarlar.sohbetKanal).send(`${client.emojis.cache.get("821487268056399892")}  ${etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
   
 }
 exports.config = {
