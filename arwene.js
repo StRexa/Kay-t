@@ -58,22 +58,21 @@ const arw = `Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyo
 if(arwZaman < 1296000000) {
   arw = `Hesabın sunucumuza kayıt olmak için daha çok genç...`
 }
-const arw2 = [];
-if(db.fetch(`tagliAlim.${member.guild.id}`)) {
-  arw2 = `ve tag alman`
-}
+  
+let arw2 = `ve tag alman`
+
 
 member.roles.add(ayarlar.kayıtsızRol)
-member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
+member.setNickname(`İsim Shex`)
 
 arwKanal.send(`
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoşgeldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+Sunucumuza hoşgeldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
+Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın. Kurallara uymaman sonucunda kuralları okuduğun varsayılarak ceza verilir.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için soldaki ses kanallarına geçip isim yaş söylemen ${arw2} gerek.
+${arw}
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın.
+Kayıt olmak için ${arw2} gerek. ".tag" yazarak taglara ulaşabilirsin!
 `) 
 })
 
