@@ -7,8 +7,6 @@ module.exports.run = async (client, message, args) => {
   
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
-
-if(!etiketlenenKişi.user.username.includes("Shex") && !etiketlenenKişi.user.discriminator.includes("1281") && !etiketlenenKişi.roles.cache.has(ayarlar.vipRol) && !etiketlenenKişi.roles.cache.has(ayarlar.boosterRol)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirtilen kişinin kaydı \`booster değil/vip değil/tag almamış\` durumlarından herhangi birinden dolayı gerçekleştirilemedi!**`).then(message.react(client.emojis.cache.get(ayarlar.no))) 
   
 const isim = args.splice(1).join(' ')
 if(!isim) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir isim belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
@@ -34,8 +32,8 @@ db.push(`isimler.${etiketlenenKişi.id}`, {
 Yetkili: message.author.id
 })
 
-db.add(`kadinTeyit.${etiketlenenKişi.id}`, `1`)
-db.add(`toplamTeyit.${etiketlenenKişi.id}`, `1`)
+db.add(`kadinTeyit.${message.author.id}`, `1`)
+db.add(`toplamTeyit.${message.author.id}`, `1`)
 
 }
 exports.config = {
