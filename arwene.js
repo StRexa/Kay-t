@@ -54,9 +54,9 @@ client.on("guildMemberAdd", async (member) => {
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! (${client.emojis.cache.get(ayarlar.yes)})`
+const arw = `Hesabın sunucumuza kayıt olmak için **tüm şartları karşılıyor!** (${client.emojis.cache.get(ayarlar.yes)})`
 if(arwZaman < 1296000000) {
-  arw = `Hesabın sunucumuza kayıt olmak için daha çok genç! (${client.emojis.cache.get(ayarlar.no)})`
+  arw = `Hesabın sunucumuza kayıt olmak için **daha çok genç!** (${client.emojis.cache.get(ayarlar.no)})`
 }
   
 let arw2 = `tag alman`
