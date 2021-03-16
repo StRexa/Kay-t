@@ -59,20 +59,20 @@ if(arwZaman < 1296000000) {
   arw = `Hesabın sunucumuza kayıt olmak için daha çok genç...`
 }
   
-let arw2 = `ve tag alman`
+let arw2 = `tag alman`
 
 
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 
 arwKanal.send(`
-Sunucumuza hoşgeldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  **Shex #1281'e hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın. Kurallara uymaman sonucunda kuralları okuduğun varsayılarak ceza verilir.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın. Cezalar buna göre verilir
 
-${arw}
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
 
-Kayıt olmak için ${arw2} gerek. ".tag" yazarak taglara ulaşabilirsin!
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için ${arw2} gerek. ".tag" yazarak taglara ulaşabilirsin!**
 `) 
 })
 
