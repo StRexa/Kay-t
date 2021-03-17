@@ -54,24 +54,24 @@ client.on("guildMemberAdd", async (member) => {
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `**(${client.emojis.cache.get(ayarlar.yes)})** Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+const arw = `(${client.emojis.cache.get(ayarlar.yes)}) Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
 if(arwZaman < 1296000000) {
-  arw = `**(${client.emojis.cache.get(ayarlar.no)})** Hesabın sunucumuza kayıt olmak için daha çok genç! **(${client.emojis.cache.get(ayarlar.no)})**`
+  arw = `(${client.emojis.cache.get(ayarlar.no)}) Hesabın sunucumuza kayıt olmak için daha çok genç! **(${client.emojis.cache.get(ayarlar.no)})**`
 }
   
 let arw2 = `tag alman`
- let gifck = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/810802078628839434/821647750248267786/Shex_1281.png")
+ let gifck = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/806458670195277854/821664528466968596/Go0xTC.gif")
 
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 arwKanal.send(`
 **Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-<a:shex_tada:821453831745044521>  Kayıt olmak için sunucumuzun tagını alman gerek, ".tag" yazarak tagımıza ulaşabilirsin.
+(<a:shex_tada:821453831745044521>) Kayıt olmak için sunucumuzun tagını alman gerek, ".tag" yazarak tagımıza ulaşabilirsin.
 
 ${arw} 
 
-<a:zil:821654118941589515>  Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.**`, gifck)
+(<a:zil:821654118941589515>) Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.**`, gifck)
   
 })
 
