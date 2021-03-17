@@ -71,7 +71,7 @@ arwKanal.send(`
 
 ${arw} 
 
-(<a:zil:821654118941589515>) Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.**`, gifck)
+(<a:zil:821654118941589515>) Ses teyit odalarına geçersen <@&821073028683005984> seninle ilgilenecektir.**`, gifck)
   
 })
 
