@@ -60,7 +60,6 @@ if(arwZaman < 1296000000) {
 }
   
 let arw2 = `tag alman`
- let gifck = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/803503891555155988/821678381187072010/15.gif")
 
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
@@ -71,7 +70,8 @@ arwKanal.send(`
 
 ${arw} 
 
-(<a:zil:821654118941589515>) Ses teyit odalarına geçersen <@&821073028683005984> seninle ilgilenecektir.**`, gifck)
+ Ses teyit odalarına geçersen <@&821073028683005984> seninle ilgilenecektir.**
+`)
   
 })
 
