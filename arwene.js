@@ -63,7 +63,6 @@ let arw2 = `tag alman`
 
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
-
 arwKanal.send(`
 Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
@@ -71,8 +70,9 @@ Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.membe
 
 ${arw} 
 
-<a:zil:821654118941589515>  Ses teyit odalarına geçersen <@&821073028683005984> seninle ilgilenecektir.
-`) 
+<a:zil:821654118941589515>  Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.` , img)
+  
+let img = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/810802078628839434/821647750248267786/Shex_1281.png")
 })
 
 client.login(process.env.TOKEN)
