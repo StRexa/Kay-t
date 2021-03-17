@@ -54,9 +54,9 @@ client.on("guildMemberAdd", async (member) => {
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `(${client.emojis.cache.get(ayarlar.yes)}) Hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+const arw = `hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! **(${client.emojis.cache.get(ayarlar.yes)})**`
 if(arwZaman < 1296000000) {
-  arw = `(${client.emojis.cache.get(ayarlar.no)}) Hesabın sunucumuza kayıt olmak için daha çok genç! **(${client.emojis.cache.get(ayarlar.no)})**`
+  arw = `hesabın sunucumuza kayıt olmak için daha çok genç! **(${client.emojis.cache.get(ayarlar.no)})**`
 }
   
 let arw2 = `tag alman`
@@ -64,13 +64,13 @@ let arw2 = `tag alman`
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 arwKanal.send(`
-**Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+Shex'e hoş geldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-(<a:shex_tada:821453831745044521>) Kayıt olmak için sunucumuzun tagını alman gerek, ".tag" yazarak tagımıza ulaşabilirsin.
+Ailemize katılmak ve sunucumuza kayıt olmak için herhangi bir chate "**.tag**" yazarak taglarımızdan birini alabilirsin. Tagımızı aldığın zaman kaydını yetkili (<@&821073028683005984>) arkadaşlarımız yapacaktır.
 
-${arw} 
+Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olsun**" şartı var. Ve senin ${arw} 
 
- Ses teyit odalarına geçersen <@&821073028683005984> seninle ilgilenecektir.**
+<#${ayarlar.rulesKanal}> kanalındaki kuralları okuduğun varsayılarak ceza işlemlerin uygulanır.
 `)
   
 })
