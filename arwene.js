@@ -65,13 +65,13 @@ member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 
 arwKanal.send(`
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Shex #1281'e hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olduğun zamandan itibaren <#${ayarlar.rulesKanal}> okumuş sayılırsın. Cezalar buna göre verilir.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw} 
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için ${arw2} gerek. ".tag" yazarak taglara ulaşabilirsin!
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Kayıt olmak için ${arw2} gerek. ".tag" yazarak taglara ulaşabilirsin! <@&821073028683005984> seninle ilgilenecektir.
 `) 
 })
 
