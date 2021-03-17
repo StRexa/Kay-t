@@ -75,7 +75,7 @@ ${client.emojis.cache.get("821654235304820776")}  Ayrıca bu sunucuya kayıt olm
 
 ${arw} 
 
-${client.emojis.cache.get("821654118941589515")}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalındaki kuralları okuduğun varsayılarak uygulanır.
+${client.emojis.cache.get("821654118941589515")}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&821073028683005984> )
 `)
   
 })
