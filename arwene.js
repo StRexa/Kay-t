@@ -70,9 +70,8 @@ Shex Ailesine hoş geldin, **${member}**. Sayende sunucumuz ${member.guild.membe
 
 ${arw} 
 
-<a:zil:821654118941589515>  Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.` , img)
+<a:zil:821654118941589515>  Ses teyit odalarına geçersen <@&821073028683005984qwe> seninle ilgilenecektir.`)
   
-let img = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/810802078628839434/821647750248267786/Shex_1281.png")
 })
 
 client.login(process.env.TOKEN)

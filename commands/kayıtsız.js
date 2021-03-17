@@ -25,5 +25,5 @@ message.channel.send(arwEmbed.setDescription(`Kullanıcı başarıyla kayıtsız
 exports.config = {
     name: "kayıtsız",
     guildOnly: true,
-    aliases: ["unregister", "kayitsiz", "unregistered"]
+    aliases: ["ks", "kayitsiz", "unreg"]
 }

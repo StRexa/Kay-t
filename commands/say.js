@@ -25,9 +25,10 @@ message.react(client.emojis.cache.get(ayarlar.yes))
 let arwEmbed = new Discord.MessageEmbed()
 .setDescription(`
 \`>\` Sunucumuzda toplam ${message.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
+\`>\` Sunucumuzda aktif **message.guild.members.cache.filter(u => u.presence.status != "offline").size.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** kişi bulunmaktadır.
 \`>\` Sunucumuzdaki sesli kanallarda ${message.guild.channels.cache.filter(channel => channel.type == "voice").map(channel => channel.members.size).reduce((a, b) => a + b).toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
 \`>\` Sunucumuzun tagını almış ${topSize.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır. (Shex: **${tag1}** #1281: **${tag2}**)
-`)
+\`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
 .setFooter(ayarlar.footer)
 .setColor("RANDOM")
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
