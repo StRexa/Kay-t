@@ -7,6 +7,27 @@ const tag1 = message.guild.members.cache.filter(m => m.user.username.includes("S
 const tag2 = message.guild.members.cache.filter(m => m.user.discriminator.includes("1281")).size
 const topSize = tag1 + tag2
   
+var online = message.guild.members.cache.filter(u => u.presence.status != "offline").size.toString().replace(/ /g, "   ")
+var a = online.match(/([0-9])/g)
+online = online.replace(/([a-zA-Z])/g, "Bilinmiyor.").toLowerCase()
+if(a) {
+  online = online.replace(/([0-9])/g, d => {
+    return {
+    "0": `${ayarlar.sifirEmoji}`,
+    "1": `${ayarlar.birEmoji}`,
+    "2": `${ayarlar.ikiEmoji}`,
+    "3": `${ayarlar.ucEmoji}`,
+    "4": `${ayarlar.dortEmoji}`,
+    "5": `${ayarlar.besEmoji}`,
+    "6": `${ayarlar.altiEmoji}`,
+    "7": `${ayarlar.yediEmoji}`,
+    "8": `${ayarlar.sekizEmoji}`,
+    "9": `${ayarlar.dokuzEmoji}`}[d];
+  })
+}
+
+
+
 let arwSayılar = {
     "0": `${ayarlar.sifirEmoji}`,
     "1": `${ayarlar.birEmoji}`,
@@ -25,7 +46,7 @@ message.react(client.emojis.cache.get(ayarlar.yes))
 let arwEmbed = new Discord.MessageEmbed()
 .setDescription(`
 \`>\` Sunucumuzda toplam ${message.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzda aktif **${message.guild.members.cache.filter(u => u.presence.status != "offline").toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** kişi bulunmaktadır.
+\`>\` Sunucumuzda aktif **${online}** kişi bulunmaktadır.
 \`>\` Sunucumuzdaki sesli kanallarda ${message.guild.channels.cache.filter(channel => channel.type == "voice").map(channel => channel.members.size).reduce((a, b) => a + b).toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
 \`>\` Sunucumuzun tagını almış ${topSize.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır. (Shex: **${tag1}** #1281: **${tag2}**)
 \`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
