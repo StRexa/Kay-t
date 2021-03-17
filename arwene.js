@@ -24,9 +24,12 @@ fs.readdir('./commands/', (err, files) => {
 
 client.on('message', async message => {
   if (message.content === '.arwene') {
+    
+  if(message.member.roles.cache.has("821072999347388416")) {
   client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
     message.delete()
   }
+}
   
   if(message.content === '.tag') {
     message.channel.send(`**Shex** / **#1281**`)
@@ -54,9 +57,9 @@ client.on("guildMemberAdd", async (member) => {
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! **(${client.emojis.cache.get(ayarlar.yes)})**`
+const arw = `${client.emojis.cache.get(ayarlar.yes)}  Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
 if(arwZaman < 1296000000) {
-  arw = `hesabın sunucumuza kayıt olmak için daha çok genç! **(${client.emojis.cache.get(ayarlar.no)})**`
+  arw = `${client.emojis.cache.get(ayarlar.no)}  Ve senin hesabın sunucumuza kayıt olmak için daha çok genç!`
 }
   
 let arw2 = `tag alman`
@@ -64,13 +67,15 @@ let arw2 = `tag alman`
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 arwKanal.send(`
-Shex'e hoş geldin, ${member}. Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+${client.emojis.cache.get("821487268056399892")}  Shex'e hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-Ailemize katılmak ve sunucumuza kayıt olmak için herhangi bir chate "**.tag**" yazarak taglarımızdan birini alabilirsin. Tagımızı aldığın zaman kaydını yetkili (<@&821073028683005984>) arkadaşlarımız yapacaktır.
+${client.emojis.cache.get("821453831745044521")}  Sunucumuza kayıt olmak için herhangi bir chate "**.tag**" yazarak taglarımızdan birini alabilirsin!
 
-Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olsun**" şartı var. Ve senin ${arw} 
+${client.emojis.cache.get("821654235304820776")}  Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olmalı**" şartı var. 
 
-<#${ayarlar.rulesKanal}> kanalındaki kuralları okuduğun varsayılarak ceza işlemlerin uygulanır.
+${arw} 
+
+${client.emojis.cache.get("821654118941589515")}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalındaki kuralları okuduğun varsayılarak uygulanır.
 `)
   
 })
