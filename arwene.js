@@ -60,7 +60,7 @@ if(arwZaman < 1296000000) {
 }
   
 let arw2 = `tag alman`
- let gifck = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/806458670195277854/821664528466968596/Go0xTC.gif")
+ let gifck = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/803503891555155988/821678381187072010/15.gif")
 
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
