@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+const ayarlar = require("../ayarlar.json")
 const db = require("quick.db")
 
 module.exports.run = async (client, message, args) => {
@@ -9,7 +10,7 @@ module.exports.run = async (client, message, args) => {
   m = message;
   a = args;
   dc = Discord
-  if(message.member.id != "527472604810969088") return false
+  if(message.member.id != ayarlar.sahip) return false
   let codein = a.slice(0).join(' ')
   if(!codein.toLowerCase().includes('token')) {  
   try {
@@ -18,7 +19,7 @@ module.exports.run = async (client, message, args) => {
       if (typeof code !== 'string')    
         code = require('util').inspect(code, { depth: 0 });
     
-      if(code.includes(process.env.TOKEN)) return m.reply("sg tokeni başka yöntemle al")
+      if(code.includes(process.env.TOKEN)) return m.reply("token mi alcan hahah")
       const embed = new dc.MessageEmbed()
       .setColor("RANDOM")
       .addField('Kod', `\`\`\`js\n${codein.length > 1024 ? "Karakter aşımı!" : codein}\`\`\``)
@@ -32,7 +33,7 @@ module.exports.run = async (client, message, args) => {
     m.channel.send(embed2);
   }
   } else {
-    m.channel.send('ucunu alırsın')
+    m.channel.send('sg oc')
   }
 
 };

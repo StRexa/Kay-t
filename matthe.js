@@ -1,3 +1,5 @@
+// Arwene tarafından Matthe için kodlanmıştır!
+
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const ayarlar = require("./ayarlar.json")
@@ -23,16 +25,9 @@ fs.readdir('./commands/', (err, files) => {
 })
 
 client.on('message', async message => {
-  if (message.content === '.arwene') {
-    
-  if(message.member.roles.cache.has("821072999347388416")) {
-  client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
-    message.delete()
-  }
-}
   
   if(message.content === '.tag') {
-    message.channel.send(`**Shex** / **#1281**`)
+    message.channel.send(`\`${ayarlar.tag}\``)
   }
   })
 
@@ -67,15 +62,15 @@ let arw2 = `tag alman`
 member.roles.add(ayarlar.kayıtsızRol)
 member.setNickname(`İsim Shex`)
 arwKanal.send(`
-${client.emojis.cache.get("821487268056399892")}  Shex'e hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Shex'e hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-${client.emojis.cache.get("821453831745044521")}  Sunucumuza kayıt olmak için herhangi bir chate "**.tag**" yazarak taglarımızdan birini alabilirsin!
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!!
 
-${client.emojis.cache.get("821654235304820776")}  Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olmalı**" şartı var. 
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olmalı**" şartı var. 
 
 ${arw} 
 
-${client.emojis.cache.get("821654118941589515")}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&821073028683005984> )
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
 `)
   
 })
@@ -83,6 +78,6 @@ ${client.emojis.cache.get("821654118941589515")}  Ceza işlemlerin <#${ayarlar.r
 client.login(process.env.TOKEN)
 
 client.on("ready", () => {
-  client.channels.cache.get("821073095682686986").join();
+  client.channels.cache.get(ayarlar.botSesKanal).join();
   });
 

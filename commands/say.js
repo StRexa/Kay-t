@@ -3,9 +3,8 @@ const ayarlar = require("../ayarlar.json")
 
 module.exports.run = async (client, message, args) => {
 
-const tag1 = message.guild.members.cache.filter(m => m.user.username.includes("Shex")).size
-const tag2 = message.guild.members.cache.filter(m => m.user.discriminator.includes("1281")).size
-const topSize = tag1 + tag2
+const tag = message.guild.members.cache.filter(m => m.user.username.includes(ayarlar.tag)).size
+
   
 let arwSayılar = {
     "0": `${ayarlar.sifirEmoji}`,
@@ -22,14 +21,11 @@ let arwSayılar = {
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-var online = message.guild.members.cache.filter(a => a.user.presence.status !== "offline").size
-var online2 = `${online}`.split("").map(e => arwSayılar[e] || e).join("")
-
 let arwEmbed = new Discord.MessageEmbed()
 .setDescription(`
 \`>\` Sunucumuzda toplam ${message.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
 \`>\` Sunucumuzdaki sesli kanallarda ${message.guild.channels.cache.filter(channel => channel.type == "voice").map(channel => channel.members.size).reduce((a, b) => a + b).toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzun tagını almış ${topSize.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır. (Shex: **${tag1}** #1281: **${tag2}**)
+\`>\` Sunucumuzun tagını almış ${tag.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.)
 \`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
 .setFooter(ayarlar.footer)
 .setColor("RANDOM")

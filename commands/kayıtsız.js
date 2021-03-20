@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 if(!etiketlenenKişi) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kayıtsıza atmak için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
-if(message.member.roles.highest.position <= etiketlenenKişi.roles.highest.position) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Senden üstte bir kişiyi kayıtsıza atamazsın!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+if(message.member.roles.highest.position <= etiketlenenKişi.roles.highest.position) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Senden üstte/aynı pozisyonda bir kişiyi kayıtsıza atamazsın!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
@@ -19,11 +19,11 @@ etiketlenenKişi.roles.set([ayarlar.kayıtsızRol])
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed.setDescription(`Kullanıcı başarıyla kayıtsıza <@&${ayarlar.kayıtsızRol}> atıldı!`))
+message.channel.send(arwEmbed.setDescription(`Kullanıcı başarıyla kayıtsıza (<@&${ayarlar.kayıtsızRol}>) atıldı!`))
 
 }
 exports.config = {
     name: "kayıtsız",
     guildOnly: true,
-    aliases: ["ks", "kayitsiz", "unreg"]
+    aliases: ["unregistered", "kayitsiz", "unreg", "unregister"]
 }

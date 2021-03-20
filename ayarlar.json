@@ -34,9 +34,12 @@
 
     "hosgeldinKanal" : "",
     "hosgeldinMesajEmoji" : "",
+    "hosgeldinMesajYetkili": "",
     "rulesKanal" : "",
 
     "sohbetKanal" : "", 
+  
+    "botSesKanal" : "",
   
     "yes" : "",
     "no" : ""
