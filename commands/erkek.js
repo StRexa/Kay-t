@@ -9,12 +9,15 @@ module.exports.run = async (client, message, args) => {
 if(!etiketlenenKişi) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
   
 const isim = args.splice(1).join(' ')
+const yaş = args[2]
 if(!isim) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir isim belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
-
+if(!yaş) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir yaş belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+if(isNaN(yaş)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirttiğin yaş rakamlardan oluşmalı!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+  
 etiketlenenKişi.roles.add(ayarlar.erkekRol1)
 etiketlenenKişi.roles.add(ayarlar.erkekRol2)
 etiketlenenKişi.roles.remove(ayarlar.kayıtsızRol)
-etiketlenenKişi.setNickname(`${isim} Shex`)
+etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim} `)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
@@ -35,7 +38,7 @@ Yetkili: message.author.id
 db.add(`erkekTeyit.${message.member.id}`, `1`)
 db.add(`toplamTeyit.${message.member.id}`, `1`)
 
-client.channels.cache.get(ayarlar.sohbetKanal).send(`${client.emojis.cache.get("821487268056399892")}  ${etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
+client.channels.cache.get(ayarlar.sohbetKanal).send(`{etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
   
 }
 exports.config = {
