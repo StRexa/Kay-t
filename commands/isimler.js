@@ -14,7 +14,7 @@ const arwEmbed = new Discord.MessageEmbed()
 
 let isimler = db.get(`isimler.${etiketlenenKişi.id}`) || [];
 isimler = isimler.reverse()
-let isimler2 = isimler.length > 0 ? isimler.map((value) => `${value.İsim} Shex ( <@!${value.Yetkili}> )`).join("\n") : `${client.emojis.cache.get(ayarlar.no)} ${etiketlenenKişi} kullanıcısına ait isim bulunamadı!`
+let isimler2 = isimler.length > 0 ? isimler.map((value) => `${ayarlar.tag} ${value.İsim} ${ayarlar.sembol} ${value.Yaş}  ( <@!${value.Yetkili}> )`).join("\n") : `${client.emojis.cache.get(ayarlar.no)} ${etiketlenenKişi} kullanıcısına ait isim bulunamadı!`
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 

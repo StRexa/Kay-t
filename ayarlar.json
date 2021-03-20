@@ -1,41 +1,43 @@
 {
-    "sahip" : "527472604810969088",
-    "prefix" : ".",
-    "footer" : "Matthe ❤️ Arwene",
-
-    "tag" : ["Shex", "#1281"],
-
-    "yetkiliRol" : ["821073028683005984", "821073014003073094", "821073003851808778"],
-    "vipRol" : "821073041835819078",
-    "boosterRol" : "821300871950106637",
-    "kayıtsızRol" : "821073047180148817",
-    "erkekRol" : ["821073045040398348", "821073046432907336"],
-    "erkekRol1" : "821073045040398348",
-    "erkekRol2" : "821073046432907336",
-    "kadınRol" : ["821073043605684295", "821073044583612416"],
-    "kadınRol1" : "821073043605684295",
-    "kadınRol2" : "821073044583612416",
-
-    "sifirEmoji" : "821103094540140545",
-    "birEmoji" : "821103262181621820",
-    "ikiEmoji" : "821103284596768788",
-    "ucEmoji" : "821103320856395806",
-    "dortEmoji" : "821103340531220571",
-    "besEmoji" : "821103359384748094",
-    "altiEmoji" : "821103409679302677",
-    "yediEmoji" : "821103456176570368",
-    "sekizEmoji" : "821103496345944075",
-    "dokuzEmoji" : "821103522187706379",
-
-    "tagRol" : "821073039960571944",
-    "tagLogKanal" : "821073135033516063",
-
-    "hosgeldinKanal" : "821073092163141642",
-    "hosgeldinMesajEmoji" : "821101605034000415",
-    "rulesKanal" : "821073099218616360",
-
-    "sohbetKanal" : "821073115639054409", 
+    "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz",
   
-    "yes" : "821101333464612884",
-    "no" : "821101423097938010"
+    "sahip" : "ID'niz",
+    "prefix" : "Prefixiniz",
+    "footer" : "Adınız ❤️ Sunucu isminiz",
+
+    "tag" : "Tagınız",
+    "sembol" : "Kayıt ederken isim ve yaşın arasına koyulacak sembol (yoksa boş bırakın)",
+  
+    "yetkiliRol" : ["", "", ""],
+    "vipRol" : "",
+    "boosterRol" : "",
+    "kayıtsızRol" : "",
+    "erkekRol" : ["", ""],
+    "erkekRol1" : "",
+    "erkekRol2" : "",
+    "kadınRol" : ["", ""],
+    "kadınRol1" : "",
+    "kadınRol2" : "",
+
+    "sifirEmoji" : "",
+    "birEmoji" : "",
+    "ikiEmoji" : "",
+    "ucEmoji" : "",
+    "dortEmoji" : "",
+    "besEmoji" : "",
+    "altiEmoji" : "",
+    "yediEmoji" : "",
+    "sekizEmoji" : "",
+    "dokuzEmoji" : "",
+
+    "tagRol" : "",
+
+    "hosgeldinKanal" : "",
+    "hosgeldinMesajEmoji" : "",
+    "rulesKanal" : "",
+
+    "sohbetKanal" : "", 
+  
+    "yes" : "",
+    "no" : ""
 }

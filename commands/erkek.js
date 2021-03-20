@@ -17,13 +17,13 @@ if(isNaN(yaş)) return message.channel.send(`${client.emojis.cache.get(ayarlar.n
 etiketlenenKişi.roles.add(ayarlar.erkekRol1)
 etiketlenenKişi.roles.add(ayarlar.erkekRol2)
 etiketlenenKişi.roles.remove(ayarlar.kayıtsızRol)
-etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim} `)
+etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}`)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
-.setDescription(`Kullanıcının ismi \`${isim} Shex\` olarak değiştirildi ve <@&${ayarlar.erkekRol1}>, <@&${ayarlar.erkekRol2}> rolleri verildi!`)
+.setDescription(`Kullanıcının ismi \`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}\` olarak değiştirildi ve <@&${ayarlar.erkekRol1}>, <@&${ayarlar.erkekRol2}> rolleri verildi!`)
 .setFooter(ayarlar.footer)
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
 .setTimestamp()
@@ -32,6 +32,7 @@ message.channel.send(arwEmbed)
 
 db.push(`isimler.${etiketlenenKişi.id}`, {
 İsim: isim,
+Yaş: yaş,
 Yetkili: message.author.id
 })
 
