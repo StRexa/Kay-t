@@ -19,7 +19,7 @@ etiketlenenKişi.roles.add(ayarlar.tagRol)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed.setDescription(`Kullanıcıya başarıyla taglı <@&${ayarlar.tagRol}> rolü verildi!`))
+message.channel.send(arwEmbed.setDescription(`Kullanıcıya başarıyla taglı <@&${ayarlar.tagRol}> rolü verildi!`))//Matthe arweneyi çok seviyorrr
 
 }
 exports.config = {

@@ -25,11 +25,11 @@ let arwEmbed = new Discord.MessageEmbed()
 .setDescription(`
 \`>\` Sunucumuzda toplam ${message.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
 \`>\` Sunucumuzdaki sesli kanallarda ${message.guild.channels.cache.filter(channel => channel.type == "voice").map(channel => channel.members.size).reduce((a, b) => a + b).toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzun tagını almış ${tag.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.)
+\`>\` Sunucumuzun tagını almış ${tag.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
 \`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
 .setFooter(ayarlar.footer)
 .setColor("RANDOM")
-.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
+.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Matthe arweneyi çok seviyorrr
 .setTimestamp()
 
 message.channel.send(arwEmbed)

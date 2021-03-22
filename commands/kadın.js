@@ -25,7 +25,7 @@ const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`Kullanıcının ismi ${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş} olarak değiştirildi ve <@&${ayarlar.kadınRol1}>, <@&${ayarlar.kadınRol2}> rolleri verildi!`)
 .setFooter(ayarlar.footer)
-.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
+.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Matthe arweneyi çok seviyorrr
 .setTimestamp()
 
 message.channel.send(arwEmbed)

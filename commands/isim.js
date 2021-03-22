@@ -20,7 +20,7 @@ message.react(client.emojis.cache.get(ayarlar.yes))
 
 const arwEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
-.setDescription(`Kullanıcının ismi \`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}\` olarak değiştirildi!`)
+.setDescription(`Kullanıcının ismi \`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}\` olarak değiştirildi!`)//Matthe arweneyi çok seviyorrr
 .setFooter(ayarlar.footer)
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
 .setTimestamp()

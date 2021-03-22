@@ -3,7 +3,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const ayarlar = require("./ayarlar.json")
-const moment = require("moment")
+const moment = require("moment")//Matthe#1000
 const fs = require("fs")
 const db = require("quick.db")
 const chalk = require("chalk")
@@ -15,7 +15,7 @@ fs.readdir('./commands/', (err, files) => {
   if (err) console.error(err);               
   console.log(`${files.length} komut yüklenecek.`)
   files.forEach(f => {                    
-    let props = require(`./commands/${f}`)
+    let props = require(`./commands/${f}`)//Matthe#1000
     console.log(`${props.config.name} komutu yüklendi.`)
     client.commands.set(props.config.name, props)
     props.config.aliases.forEach(alias => {       
@@ -27,7 +27,7 @@ fs.readdir('./commands/', (err, files) => {
 client.on('message', async message => {
   
   if(message.content === '.tag') {
-    message.channel.send(`\`${ayarlar.tag}\``)
+    message.channel.send(`\`${ayarlar.tag}\``)//Matthe#1000
   }
   })
 
@@ -46,7 +46,7 @@ client.on("guildMemberAdd", async (member) => {
     "6": `${ayarlar.altiEmoji}`,
     "7": `${ayarlar.yediEmoji}`,
     "8": `${ayarlar.sekizEmoji}`,
-    "9": `${ayarlar.dokuzEmoji}`
+    "9": `${ayarlar.dokuzEmoji}`//Matthe#1000
 }
 
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
@@ -54,13 +54,16 @@ let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
 const arw = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`
 if(arwZaman < 1296000000) {
-  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`
+  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Matthe#1000
 }
   
 let arw2 = `tag alman`
 
 member.roles.add(ayarlar.kayıtsızRol)
-member.setNickname(`İsim Yaş`)
+member.roles.add(ayarlar.kayıtsızRol)
+member.roles.add(ayarlar.kayıtsızRol)  
+
+member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
 arwKanal.send(`
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
@@ -80,4 +83,4 @@ client.login(process.env.TOKEN)
 client.on("ready", () => {
   client.channels.cache.get(ayarlar.botSesKanal).join();
   });
-
+//Matthe arweneyi çok seviyorrr
