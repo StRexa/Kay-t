@@ -1,21 +1,21 @@
 {
     "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz",
   
-    "sahip" : "ID'niz",
-    "prefix" : "Prefixiniz",
+    "sahip" : "796263552771817472",
+    "prefix" : ".",
     "footer" : "Adınız ❤️ Sunucu isminiz",
 
     "tag" : "Tagınız",
     "sembol" : "Kayıt ederken isim ve yaşın arasına koyulacak sembol (yoksa boş bırakın)",
   
-    "yetkiliRol" : ["", "", ""],
-    "vipRol" : "",
-    "boosterRol" : "",
-    "kayıtsızRol" : "",
-    "erkekRol" : ["", ""],
+    "yetkiliRol" : ["823277483364319243", "", ""],
+    "vipRol" : "823277892746084363",
+    "boosterRol" : "823430190520598538",
+    "kayıtsızRol" : "823277484433735690",
+    "erkekRol" : ["823277415379894322", "823277484996296744"],
     "erkekRol1" : "",
     "erkekRol2" : "",
-    "kadınRol" : ["", ""],
+    "kadınRol" : ["823277478311100446", "823277485642612748"],
     "kadınRol1" : "",
     "kadınRol2" : "",
 
@@ -30,11 +30,11 @@
     "sekizEmoji" : "",
     "dokuzEmoji" : "",
 
-    "tagRol" : "",
+    "tagRol" : "823277465832259636",
 
-    "hosgeldinKanal" : "",
+    "hosgeldinKanal" : "823276749726810145",
     "hosgeldinMesajEmoji" : "",
-    "hosgeldinMesajYetkili": "",
+    "hosgeldinMesajYetkili": "823277483364319243",
     "rulesKanal" : "",
 
     "sohbetKanal" : "", 

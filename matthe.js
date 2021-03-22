@@ -1,4 +1,4 @@
-// Arwene tarafından Matthe için kodlanmıştır!
+// Arwene & Matthe tarafından kodlanmıştır!
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
