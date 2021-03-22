@@ -52,23 +52,21 @@ client.on("guildMemberAdd", async (member) => {
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `${client.emojis.cache.get(ayarlar.yes)}  Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+const arw = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`
 if(arwZaman < 1296000000) {
-  arw = `${client.emojis.cache.get(ayarlar.no)}  Ve senin hesabın sunucumuza kayıt olmak için daha çok genç!`
+  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`
 }
   
 let arw2 = `tag alman`
 
 member.roles.add(ayarlar.kayıtsızRol)
-member.setNickname(`İsim Shex`)
+member.setNickname(`İsim Yaş`)
 arwKanal.send(`
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Shex'e hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!!
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ayrıca bu sunucuya kayıt olmak için "**hesabın açılalı 15 gün olmalı**" şartı var. 
-
-${arw} 
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)} ${arw} 
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
 `)
