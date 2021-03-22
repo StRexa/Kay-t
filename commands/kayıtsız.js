@@ -16,6 +16,7 @@ const arwEmbed = new Discord.MessageEmbed()
 .setTimestamp()
 
 etiketlenenKişi.roles.set([ayarlar.kayıtsızRol])
+etiketlenenKişi.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 

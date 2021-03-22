@@ -39,6 +39,8 @@ Yetkili: message.author
 db.add(`kadinTeyit.${etiketlenenKişi.id}`, `1`)
 db.add(`toplamTeyit.${etiketlenenKişi.id}`, `1`)
 
+client.channels.cache.get(ayarlar.sohbetKanal).send(`${etiketlenenKişi} **kaydolarak sunucuya giriş yaptı. Hoşgeldin!**`)
+  
 }
 exports.config = {
     name: "kadın",

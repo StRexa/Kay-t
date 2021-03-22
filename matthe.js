@@ -1,4 +1,4 @@
-// Arwene tarafından Matthe için kodlanmıştır!
+// Arwene & Matthe tarafından kodlanmıştır!
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
@@ -64,9 +64,11 @@ member.setNickname(`İsim Yaş`)
 arwKanal.send(`
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!!
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)} ${arw} 
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
+
+${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
 `)
