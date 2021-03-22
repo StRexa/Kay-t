@@ -1,6 +1,7 @@
 {
     "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz + Olarak emojileri ID olarak koymazsanız çalışmaz",
-  
+    "OKUMADANGECME2" : "TOKEN .env kısmında TOKEN yazan yerin karşısına tokeninizi yapıstırınız.",
+
     "sahip" : "ID'niz",
     "prefix" : "Prefixiniz",
     "footer" : "Adınız ❤️ Sunucu isminiz",
