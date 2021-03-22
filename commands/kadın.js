@@ -8,17 +8,14 @@ module.exports.run = async (client, message, args) => {
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[1])
 if(!etiketlenenKişi) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir kişi etiketlemelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
-if(db.fetch(`tagliAlim.${message.guild.id}`)) {
-    if(!etiketlenenKişi.roles.cache.has(ayarlar.tagRol) && !etiketlenenKişi.roles.cache.has(ayarlar.vipRol) && !etiketlenenKişi.roles.cache.has(ayarlar.boosterRol)) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Belirtilen kişinin kaydı \`booster değil/vip değil/tag almamış\` durumlarından herhangi birinden dolayı gerçekleştirilemedi!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
-}
-
-const isim = args.splice(1).join(' ')
-const yaş = args[2]
+const isim = args[1];
+const yaş = args[2];
 if(!isim) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir isim belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 if(!yaş) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Kaydetmek için bir yaş belirtmelisin!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 if(isNaN(yaş)) return message.channel.send(`${client.guild.emojis.cache.get(ayarlar.no)} **Belirttiğin yaş rakamlardan oluşmalı!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
-ayarlar.kadınRol.some(arwene2 => etiketlenenKişi.roles.add(arwene2))
+etiketlenenKişi.roles.add(ayarlar.erkekRol1)
+etiketlenenKişi.roles.add(ayarlar.erkekRol2)
 etiketlenenKişi.roles.remove(ayarlar.kayıtsızRol)
 etiketlenenKişi.setNickname(`${ayarlar.tag} ${isim} ${ayarlar.sembol} ${yaş}`)
 
@@ -33,11 +30,11 @@ const arwEmbed = new Discord.MessageEmbed()
 
 message.channel.send(arwEmbed)
 
-db.push(`isimler.${etiketlenenKişi.id}`, `
-İsim: isim
-Yaş: yaş
+db.push(`isimler.${etiketlenenKişi.id}`, {
+İsim: isim,
+Yaş: yaş,
 Yetkili: message.author
-`)
+})
 
 db.add(`kadinTeyit.${etiketlenenKişi.id}`, `1`)
 db.add(`toplamTeyit.${etiketlenenKişi.id}`, `1`)
