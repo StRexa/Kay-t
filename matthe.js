@@ -1,4 +1,4 @@
-// Arwene & Matthe tarafından kodlanmıştır!
+// Arwene#0836 tarafından Matthe için kodlanmıştır.
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
@@ -13,9 +13,9 @@ client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
 fs.readdir('./commands/', (err, files) => { 
   if (err) console.error(err);               
-  console.log(`${files.length} komut yüklenecek.`)
+  console.log(`${files.length} komut yüklenecek.`)//Arwene#0836
   files.forEach(f => {                    
-    let props = require(`./commands/${f}`)//Matthe#1000
+    let props = require(`./commands/${f}`)
     console.log(`${props.config.name} komutu yüklendi.`)
     client.commands.set(props.config.name, props)
     props.config.aliases.forEach(alias => {       
@@ -27,7 +27,7 @@ fs.readdir('./commands/', (err, files) => {
 client.on('message', async message => {
   
   if(message.content === '.tag') {
-    message.channel.send(`\`${ayarlar.tag}\``)//Matthe#1000
+    message.channel.send(`\`${ayarlar.tag}\``)//Arwene#0836
   }
   })
 
