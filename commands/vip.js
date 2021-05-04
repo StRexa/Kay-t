@@ -19,7 +19,7 @@ etiketlenenKişi.roles.add(ayarlar.vipRol)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed.setDescription(`Kullanıcıya başarıyla <@&${ayarlar.vipRol}> rolü verildi!`))//Matthe arweneyi çok seviyorrr
+message.channel.send(arwEmbed.setDescription(`Kullanıcıya başarıyla <@&${ayarlar.vipRol}> rolü verildi!`))//Youtube Matthe
 
 }
 exports.config = {

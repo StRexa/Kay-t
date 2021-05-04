@@ -1,4 +1,4 @@
-// Arwene#0836 tarafından Matthe için kodlanmıştır.
+// Sorununz olursa Matthe#0001 ulaşınız.
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
@@ -13,7 +13,7 @@ client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
 fs.readdir('./commands/', (err, files) => { 
   if (err) console.error(err);               
-  console.log(`${files.length} komut yüklenecek.`)//Arwene#0836
+  console.log(`${files.length} komut yüklenecek.`)//Youtube Matthe
   files.forEach(f => {                    
     let props = require(`./commands/${f}`)
     console.log(`${props.config.name} komutu yüklendi.`)
@@ -27,7 +27,7 @@ fs.readdir('./commands/', (err, files) => {
 client.on('message', async message => {
   
   if(message.content === '.tag') {
-    message.channel.send(`\`${ayarlar.tag}\``)//Arwene#0836
+    message.channel.send(`\`${ayarlar.tag}\``)//Youtube Matthe
   }
   })
 
@@ -46,20 +46,20 @@ client.on("guildMemberAdd", async (member) => {
     "6": `${ayarlar.altiEmoji}`,
     "7": `${ayarlar.yediEmoji}`,
     "8": `${ayarlar.sekizEmoji}`,
-    "9": `${ayarlar.dokuzEmoji}`//Matthe#1000
+    "9": `${ayarlar.dokuzEmoji}`//Youtube Matthe
 }
 
 const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
 let arwMember = member.user
 let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`//Arwene#0836
+const arw = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`//Youtube Matthe
 if(arwZaman < 1296000000) {
-  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Matthe#1000
+  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Youtube Matthe
 }
   
 member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)
-member.roles.add(ayarlar.kayıtsızRol)//Arwene#0836
+member.roles.add(ayarlar.kayıtsızRol)//Youtube Matthe
 
 member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
 arwKanal.send(`
@@ -72,7 +72,7 @@ ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ayrıca hesabın 15 gü
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
 
 ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
-`)
+`)//eğer emjiler undefined olarak gözüküyorsa veya hoş geldin mesajı atmıyorsa ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)} bunları siliniz.
   
 })
 
@@ -81,4 +81,4 @@ client.login(process.env.TOKEN)
 client.on("ready", () => {
   client.channels.cache.get(ayarlar.botSesKanal).join();
   });
-//Matthe arweneyi çok seviyorrr
+//Youtube Matthe

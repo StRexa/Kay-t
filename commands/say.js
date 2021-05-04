@@ -29,7 +29,7 @@ let arwEmbed = new Discord.MessageEmbed()
 \`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
 .setFooter(ayarlar.footer)
 .setColor("RANDOM")
-.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Matthe arweneyi çok seviyorrr
+.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Youtube Matthe
 .setTimestamp()
 
 message.channel.send(arwEmbed)

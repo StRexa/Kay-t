@@ -16,7 +16,7 @@ ${db.fetch(`toplamTeyit.${etiketlenenKişi.id}`) || 0} toplam
 kaydı var.
 `)
 .setFooter(ayarlar.footer)
-.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Matthe arweneyi çok seviyorrr
+.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Youtube Matthe
 .setTimestamp()
 
 message.react(client.emojis.cache.get(ayarlar.yes))

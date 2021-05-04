@@ -3,5 +3,5 @@ const moment = require("moment");
 const ayarlar = require("../ayarlar.json")
 
 module.exports = client => {
-  client.user.setActivity(ayarlar.footer);
+  client.user.setActivity(`YOUTUBE MATTHE`);
 };

@@ -1,8 +1,8 @@
 {
-  "//1": "Arwene tarafından Matthe için kodlanmıştır!",
+  "//1": "Matthe Register Bot",
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "Arwene tarafından Matthe için kodlanmıştır!",
+  "description": "Matthe Register Bot",
   "main": "matthe.js",
   "scripts": {
     "start": "node matthe.js"

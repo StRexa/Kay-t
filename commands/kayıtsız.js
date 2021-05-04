@@ -20,7 +20,7 @@ etiketlenenKişi.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed.setDescription(`Kullanıcı başarıyla kayıtsıza (<@&${ayarlar.kayıtsızRol}>) atıldı!`))//Matthe arweneyi çok seviyorrr
+message.channel.send(arwEmbed.setDescription(`Kullanıcı başarıyla kayıtsıza (<@&${ayarlar.kayıtsızRol}>) atıldı!`))//Youtube Matthe
 
 }
 exports.config = {

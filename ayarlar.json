@@ -13,9 +13,9 @@
     "vipRol" : "VIP ROL ID",
     "boosterRol" : "BOOSTER ROL ID",
     "kayıtsızRol" : "KAYITSIZ ROL ID",
-    "erkekRol1" : "YOKSA BOŞ BIRAK",
+    "erkekRol1" : "ERKEK ROL ID",
     "erkekRol2" : "YOKSA BOŞ BIRAK",
-    "kadınRol1" : "YOKSA BOŞ BIRAK",
+    "kadınRol1" : "KADIN ROL ID",
     "kadınRol2" : "YOKSA BOŞ BIRAK",
 
     "sifirEmoji" : "SIFIR EMOJİ ID",
