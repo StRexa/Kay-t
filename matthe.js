@@ -84,18 +84,18 @@ client.on("ready", () => {
 //Youtube Matthe
 //----------------------------------------------------- TAG ROL ------------------------------------------------\\
 
-// tag rol kodu bana ait değildir.
+// tag rol kodu bana ait değildir, geliştirip sizlere sundum.
 client.on("userUpdate", async function(oldUser, newUser) { 
-    const guildID = ""// sunucu ıd
-    const roleID = ""// taglı rolünüzün ıd
-    const tag = ""// tagınız
-    const chat = ''// chat kanalı ıd
-    const taglog = '' // log kanalı ıd
+    const guildID = "847733452643368990"// sunucu ıd
+    const roleID = "847741789019963394"// taglı rolünüzün ıd
+    const tag = "Force"// tagınız
+    const chat = '847743477516075009'// chat kanalı ıd
+    const taglog = '847744584075444226' // log kanalı ıd
   
     const guild = client.guilds.cache.get(guildID)
     const role = guild.roles.cache.find(roleInfo => roleInfo.id === roleID)
     const member = guild.members.cache.get(newUser.id)
-    const embed = new Discord.MessageEmbed().setAuthor(member.displayName, member.user.avatarURL({ dynamic: true })).setColor('#ff0000').setTimestamp().setFooter('FOOTERİNİZ');
+    const embed = new Discord.MessageEmbed().setAuthor(member.displayName, member.user.avatarURL({ dynamic: true })).setColor('#ff0010').setTimestamp().setFooter('FOOTERİNİZ');
     if (newUser.username !== oldUser.username) {
         if (oldUser.username.includes(tag) && !newUser.username.includes(tag)) {
             member.roles.remove(roleID)
