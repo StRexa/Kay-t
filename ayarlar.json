@@ -1,45 +1,45 @@
-  {
+ {
     "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz + Olarak emojileri ID olarak koymazsanız çalışmaz",
     "OKUMADANGECME2" : "TOKEN .env kısmında TOKEN yazan yerin karşısına tokeninizi yapıstırınız.",
 
-    "sahip" : "796263552771817472",
-    "prefix" : ".",
+    "sahip" : "ID'niz",
+    "prefix" : "Prefixiniz",
     "footer" : "Matthe was here!",
     "botdurum" : "Matthe ❤️ Aboneleri",
 
-    "tag" : "Force",
-    "sembol" : "|",
+    "tag" : "Tagınız",
+    "sembol" : "Kayıt ederken isim ve yaşın arasına koyulacak sembol (yoksa boş bırakın)",
   
-    "yetkiliRol" : ["847741784737972265"],
-    "vipRol" : "847741789867606017",
-    "boosterRol" : "",
-    "kayıtsızRol" : "847741788890202152",
-    "erkekRol1" : "847741785379831808",
-    "erkekRol2" : "847741785831637043",
-    "kadınRol1" : "847741786784268298",
-    "kadınRol2" : "847741788214263808",
+    "yetkiliRol" : ["YETKİLİ ROLÜ ID", "2. YOKSA BOŞ BIRAK", "3. YOKSA BOŞ BIRAK"],
+    "vipRol" : "VIP ROL ID",
+    "boosterRol" : "BOOSTER ROL ID",
+    "kayıtsızRol" : "KAYITSIZ ROL ID",
+    "erkekRol1" : "ERKEK ROL ID",
+    "erkekRol2" : "YOKSA BOŞ BIRAK",
+    "kadınRol1" : "KADIN ROL ID",
+    "kadınRol2" : "YOKSA BOŞ BIRAK",
 
-    "sifirEmoji" : "847743930497237003",
-    "birEmoji" : "847743846884048936",
-    "ikiEmoji" : "847743881079947274",
-    "ucEmoji" : "847743908065705984",
-    "dortEmoji" : "847743964621832193",
-    "besEmoji" : "847744002597322752",
-    "altiEmoji" : "847744142082703360",
-    "yediEmoji" : "847744101339496469",
-    "sekizEmoji" : "847744082612977704",
-    "dokuzEmoji" : "847744064048857109",
+    "sifirEmoji" : "SIFIR EMOJİ ID",
+    "birEmoji" : "BİR EMOJİ ID",
+    "ikiEmoji" : "İKİ EMOJİ ID",
+    "ucEmoji" : "UC EMOJİ ID",
+    "dortEmoji" : "DORT EMOJİ ID",
+    "besEmoji" : "BES EMOJİ ID",
+    "altiEmoji" : "ALTİ EMOJİ ID",
+    "yediEmoji" : "YEDİ EMOJİ ID",
+    "sekizEmoji" : "SEKİZ EMOJİ ID",
+    "dokuzEmoji" : "DOKUZ EMOJİ ID",
 
-    "tagRol" : "847741789019963394",
+    "tagRol" : "TAGLI ROLÜ ID",
 
-    "hosgeldinKanal" : "847760598552018954",
-    "hosgeldinMesajYetkili": "847741784737972265",
-    "rulesKanal" : "847743422701240330",
+    "hosgeldinKanal" : "HOS GELDİN MESAJI ATILACAK KANAL ID",
+    "hosgeldinMesajYetkili": "HOS GELDİN MESAJINDA ETİKETLENECEK ROL ID",
+    "rulesKanal" : "KURALLAR KANALI ID",
 
-    "sohbetKanal" : "847743477516075009", 
+    "sohbetKanal" : "SOHBET KANALI ID", 
   
-    "botSesKanal" : "847743271152648202",
+    "botSesKanal" : "BOT SES KANALI ID",
   
-    "yes" : "847743658614194188",
-    "no" : "847743681322418187"
+    "yes" : "ONAY EMOJİSİ ID",
+    "no" : "RED EMOJİSİ ID"
 }

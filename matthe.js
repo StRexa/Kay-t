@@ -111,7 +111,7 @@ client.on("userUpdate", async function(oldUser, newUser) {
             member.roles.remove(roleID)
             client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı etiket tagımızı çıkardığı için taglı rolü alındı!`))
         } else if (oldUser.discriminator !== "1110" && newUser.discriminator == "1110") {
-            member.roles.add(roleID)
+            member.roles.add(roleID)-
             client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı etiket tagımızı aldığı için taglı rolü verildi!`))
             client.channels.cache.get(chat).send(`**Mükemmel! ${newUser} Etiket tagımızı alarak ailemize katıldı!**`)
         }
