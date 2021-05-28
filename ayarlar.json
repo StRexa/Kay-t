@@ -2,12 +2,12 @@
     "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz + Olarak emojileri ID olarak koymazsanız çalışmaz",
     "OKUMADANGECME2" : "TOKEN .env kısmında TOKEN yazan yerin karşısına tokeninizi yapıstırınız.",
 
-    "sahip" : "ID'niz",
-    "prefix" : "Prefixiniz",
-    "footer" : "Adınız ❤️ Sunucu isminiz",
+    "sahip" : "796263552771817472",
+    "prefix" : ".",
+    "footer" : "Matthe ❤️ Aboneleri",
 
-    "tag" : "Tagınız",
-    "sembol" : "Kayıt ederken isim ve yaşın arasına koyulacak sembol (yoksa boş bırakın)",
+    "tag" : "-",
+    "sembol" : "|",
   
     "yetkiliRol" : ["YETKİLİ ROLÜ ID", "2. YOKSA BOŞ BIRAK", "3. YOKSA BOŞ BIRAK"],
     "vipRol" : "VIP ROL ID",

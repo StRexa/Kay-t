@@ -82,3 +82,41 @@ client.on("ready", () => {
   client.channels.cache.get(ayarlar.botSesKanal).join();
   });
 //Youtube Matthe
+//----------------------------------------------------- TAG ROL ------------------------------------------------\\
+
+// tag rol kodu bana ait değildir.
+client.on("userUpdate", async function(oldUser, newUser) { 
+    const guildID = ""// sunucu ıd
+    const roleID = ""// taglı rolünüzün ıd
+    const tag = ""// tagınız
+    const chat = ''// chat kanalı ıd
+    const taglog = '' // log kanalı ıd
+  
+    const guild = client.guilds.cache.get(guildID)
+    const role = guild.roles.cache.find(roleInfo => roleInfo.id === roleID)
+    const member = guild.members.cache.get(newUser.id)
+    const embed = new Discord.MessageEmbed().setAuthor(member.displayName, member.user.avatarURL({ dynamic: true })).setColor('#ff0000').setTimestamp().setFooter('FOOTERİNİZ');
+    if (newUser.username !== oldUser.username) {
+        if (oldUser.username.includes(tag) && !newUser.username.includes(tag)) {
+            member.roles.remove(roleID)
+            client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı tagımızı çıkardığı için taglı rolü alındı!`))
+        } else if (!oldUser.username.includes(tag) && newUser.username.includes(tag)) {
+            member.roles.add(roleID)
+            client.channels.cache.get(chat).send(`**Mükemmel! ${newUser} Tagımızı alarak ailemize katıldı!**`)
+            client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı tagımızı aldığı için taglı rolü verildi!`))
+        }
+    }
+   if (newUser.discriminator !== oldUser.discriminator) {
+        if (oldUser.discriminator == "1110" && newUser.discriminator !== "1110") {
+            member.roles.remove(roleID)
+            client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı etiket tagımızı çıkardığı için taglı rolü alındı!`))
+        } else if (oldUser.discriminator !== "1110" && newUser.discriminator == "1110") {
+            member.roles.add(roleID)
+            client.channels.cache.get(taglog).send(embed.setDescription(`${newUser} Kullanıcısı etiket tagımızı aldığı için taglı rolü verildi!`))
+            client.channels.cache.get(chat).send(`**Mükemmel! ${newUser} Etiket tagımızı alarak ailemize katıldı!**`)
+        }
+    }
+  
+  })
+
+//----------------------------------------------------- TAG ROL ------------------------------------------------\\

@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 exports.run= async (client, message, args) => {       
 
-let Tag = "the gang" 
-let Etiket = "1985" 
+let Tag = "Force" 
+let Etiket = "1110" 
 
    let TotalMember = message.guild.memberCount
           let Online = message.guild.members.cache.filter(off => off.presence.status !== 'offline').size;
@@ -24,16 +24,8 @@ message.channel.send(new Discord.MessageEmbed().setDescription(`
 
 
 }
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  kategori: "say",
-  permLevel: 3
-};
-
-exports.help = {
-  name: "say",
-  description: "say",
-  usage: "say"
-}; 
+exports.config = {
+    name: "say",
+    guildOnly: true,
+    aliases: ["say"]
+}
