@@ -26,5 +26,5 @@ message.channel.send(mattheEmbed.setDescription(`Kullanıcı başarıyla kayıts
 exports.config = {
     name: "kayıtsız",
     guildOnly: true,
-    aliases: ["unregistered", "kayitsiz", "unreg", "unregister"]
+    aliases: ["unregistered", "kayitsiz", "unreg", "unregister","ks"]
 }
