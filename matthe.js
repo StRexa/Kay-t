@@ -1,9 +1,9 @@
-// Sorununz olursa Matthe#0001 ulaşınız.
+// Sorununz olursa Matthe#0001 ulaşınız. https://discord.gg/vAKkqEqgfE
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const ayarlar = require("./ayarlar.json")
-const moment = require("moment")//Matthe#1000
+const moment = require("moment")//Matthe#0001
 const fs = require("fs")
 const db = require("quick.db")
 const chalk = require("chalk")

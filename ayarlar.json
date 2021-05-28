@@ -6,12 +6,12 @@
     "prefix" : ".",
     "footer" : "Matthe ❤️ Aboneleri",
 
-    "tag" : "-",
+    "tag" : "Force",
     "sembol" : "|",
   
-    "yetkiliRol" : ["YETKİLİ ROLÜ ID", "2. YOKSA BOŞ BIRAK", "3. YOKSA BOŞ BIRAK"],
-    "vipRol" : "VIP ROL ID",
-    "boosterRol" : "BOOSTER ROL ID",
+    "yetkiliRol" : ["847741784737972265"],
+    "vipRol" : "847741789867606017",
+    "boosterRol" : "",
     "kayıtsızRol" : "KAYITSIZ ROL ID",
     "erkekRol1" : "ERKEK ROL ID",
     "erkekRol2" : "YOKSA BOŞ BIRAK",

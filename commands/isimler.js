@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
 
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author
 
-const arwEmbed = new Discord.MessageEmbed()
+const mattheEmbed = new Discord.MessageEmbed()
 .setColor("2f3136")
 .setFooter(ayarlar.footer)
 .setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))
@@ -18,7 +18,7 @@ let isimler2 = isimler.length > 0 ? isimler.map((value) => `${ayarlar.tag} ${val
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed.setDescription(`
+message.channel.send(mattheEmbed.setDescription(`
 ${client.emojis.cache.get(ayarlar.yes)} ${etiketlenenKişi} kullanıcısına ait isimler:
 
 ${isimler2}

@@ -1,5 +1,6 @@
-Altyapı sahibi Matthe'dir çalınması halinde gerekli ceza-i işlemler uygulanacaktır.
+Altyapı Matthe YouTube Kanalına Aittir, Çalınması Durumunda Gerekli İşlemler Yapılacaktır.
 
-Youtube kanalımız: https://www.youtube.com/channel/UCZ0DgL77TQFNMwmnbvG8cuw
-Discord sunucumuz: https://discord.gg/dJ47eNca
-İletişim için: Matthe#0001
+İletişim İçin;
+Discord: Matthe#0001
+İnstagram: matthecim
+Sunucumuz: https://discord.gg/vAKkqEqgfE

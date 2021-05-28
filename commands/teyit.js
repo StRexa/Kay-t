@@ -3,11 +3,11 @@ const ayarlar = require("../ayarlar.json")
 const db = require("quick.db")
 
 module.exports.run = async (client, message, args) => {
-    if(!ayarlar.yetkiliRol.some(arwww => message.member.roles.cache.has(arwww)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
+    if(!ayarlar.yetkiliRol.some(mattheee => message.member.roles.cache.has(mattheee)) && !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`${client.emojis.cache.get(ayarlar.no)} **Bu işlemi gerçekleştirmek için gerekli yetkin yok!**`).then(message.react(client.emojis.cache.get(ayarlar.no)))
 
     const etiketlenenKişi = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author
 
-const arwEmbed = new Discord.MessageEmbed()
+const mattheEmbed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`${client.emojis.cache.get(ayarlar.yes)} ${etiketlenenKişi} kullanıcısının
 ${db.fetch(`kadinTeyit.${etiketlenenKişi.id}`) || 0} kadın,
@@ -21,7 +21,7 @@ kaydı var.
 
 message.react(client.emojis.cache.get(ayarlar.yes))
 
-message.channel.send(arwEmbed)
+message.channel.send(mattheEmbed)
 
 }
 exports.config = {
