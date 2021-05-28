@@ -32,7 +32,6 @@
     "tagRol" : "TAGLI ROLÜ ID",
 
     "hosgeldinKanal" : "HOS GELDİN MESAJI ATILACAK KANAL ID",
-    "hosgeldinMesajEmoji" : "HOS GELDİN EMOJİSİ ID",
     "hosgeldinMesajYetkili": "HOS GELDİN MESAJINDA ETİKETLENECEK ROL ID",
     "rulesKanal" : "KURALLAR KANALI ID",
 

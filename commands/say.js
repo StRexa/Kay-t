@@ -1,42 +1,39 @@
-const Discord = require("discord.js")
-const ayarlar = require("../ayarlar.json")
+const Discord = require("discord.js");
+exports.run= async (client, message, args) => {       
 
-module.exports.run = async (client, message, args) => {
+let Tag = "the gang" 
+let Etiket = "1985" 
 
-const tag = message.guild.members.cache.filter(m => m.user.username.includes(ayarlar.tag)).size
+   let TotalMember = message.guild.memberCount
+          let Online = message.guild.members.cache.filter(off => off.presence.status !== 'offline').size;
+          let Taglı = message.guild.members.cache.filter(u => u.user.username.includes(Tag)).size;
+          let Etiketiniz = message.guild.members.cache.filter(u => u.user.discriminator.includes(Etiket)).size;
+          let toplamTag = Etiketiniz + Taglı
+          let Voice = message.guild.members.cache.filter(s => s.voice.channel).size;
+          let Boost = message.guild.premiumSubscriptionCount;
 
-  
-let arwSayılar = {
-    "0": `${ayarlar.sifirEmoji}`,
-    "1": `${ayarlar.birEmoji}`,
-    "2": `${ayarlar.ikiEmoji}`,
-    "3": `${ayarlar.ucEmoji}`,
-    "4": `${ayarlar.dortEmoji}`,
-    "5": `${ayarlar.besEmoji}`,
-    "6": `${ayarlar.altiEmoji}`,
-    "7": `${ayarlar.yediEmoji}`,
-    "8": `${ayarlar.sekizEmoji}`,
-    "9": `${ayarlar.dokuzEmoji}`
-}
+message.channel.send(new Discord.MessageEmbed().setDescription(`
+\`•\` Sunucumuzda toplam **${TotalMember}** kullanıcı bulunmaktadır.
+\`•\` Sunucumuzda toplam **${Online}** aktif kullanıcı bulunmaktadır.
+\`•\` Toplam **${Taglı}** \`${Tag}\` kişi tagımızda bulunuyor.
+\`•\` Toplam **${Etiketiniz}** \`${Etiket}\` kişi tagımızda bulunuyor.
+\`•\` Seste **${Voice}** kullanıcı bulunmaktadır.
+\`•\` Sunucuya toplam **${Boost}** takviye yapılmıştır. 
+`))
 
-message.react(client.emojis.cache.get(ayarlar.yes))
 
-let arwEmbed = new Discord.MessageEmbed()
-.setDescription(`
-\`>\` Sunucumuzda toplam ${message.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzdaki sesli kanallarda ${message.guild.channels.cache.filter(channel => channel.type == "voice").map(channel => channel.members.size).reduce((a, b) => a + b).toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzun tagını almış ${tag.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} adet üye bulunmaktadır.
-\`>\` Sunucumuzda toplam **${message.guild.premiumSubscriptionCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")}** takviye bulunmaktadır.`)
-.setFooter(ayarlar.footer)
-.setColor("RANDOM")
-.setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true}))//Youtube Matthe
-.setTimestamp()
-
-message.channel.send(arwEmbed)
 
 }
-exports.config = {
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  kategori: "say",
+  permLevel: 3
+};
+
+exports.help = {
   name: "say",
-  guildOnly: true,
-  aliases: ["count", "sayı"]
-}
+  description: "say",
+  usage: "say"
+}; 

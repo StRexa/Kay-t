@@ -36,7 +36,7 @@ client.on("ready", () => {
 })
 
 client.on("guildMemberAdd", async (member) => {
-  let arwSayılar = {
+  let mattheSayılar = {
     "0": `${ayarlar.sifirEmoji}`,
     "1": `${ayarlar.birEmoji}`,
     "2": `${ayarlar.ikiEmoji}`,
@@ -49,12 +49,12 @@ client.on("guildMemberAdd", async (member) => {
     "9": `${ayarlar.dokuzEmoji}`//Youtube Matthe
 }
 
-const arwKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
-let arwMember = member.user
-let arwZaman = new Date().getTime() - arwMember.createdAt.getTime()
-const arw = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`//Youtube Matthe
-if(arwZaman < 1296000000) {
-  arw = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Youtube Matthe
+const mattheKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
+let mattheMember = member.user
+let mattheZaman = new Date().getTime() - mattheMember.createdAt.getTime()
+const matthe = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`//Youtube Matthe
+if(mattheZaman < 1296000000) {
+  matthe = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Youtube Matthe
 }
   
 member.roles.add(ayarlar.kayıtsızRol)
@@ -62,17 +62,17 @@ member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)//Youtube Matthe
 
 member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
-arwKanal.send(`
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(arwSayılar[a])).join("")} kişi.
+mattheKanal.send(`
+Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(mattheSayılar[a])).join("")} kişi.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
+Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
+Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  ${arw}
+${matthe}
 
-${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)}  Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
-`)//eğer emjiler undefined olarak gözüküyorsa veya hoş geldin mesajı atmıyorsa ${client.emojis.cache.get(ayarlar.hosgeldinMesajEmoji)} bunları siliniz.
+Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
+`)
   
 })
 
