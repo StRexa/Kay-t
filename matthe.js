@@ -35,46 +35,50 @@ client.on("ready", () => {
     console.log(chalk.redBright(`tm`))
 })
 
-client.on("guildMemberAdd", async (member) => {
-  let mattheSayılar = {
-    "0": `${ayarlar.sifirEmoji}`,
-    "1": `${ayarlar.birEmoji}`,
-    "2": `${ayarlar.ikiEmoji}`,
-    "3": `${ayarlar.ucEmoji}`,
-    "4": `${ayarlar.dortEmoji}`,
-    "5": `${ayarlar.besEmoji}`,
-    "6": `${ayarlar.altiEmoji}`,
-    "7": `${ayarlar.yediEmoji}`,
-    "8": `${ayarlar.sekizEmoji}`,
-    "9": `${ayarlar.dokuzEmoji}`//Youtube Matthe
-}
+// BOTUN İNTENTLERİNİ AÇMAYI UNUTMAYIN 
 
-const mattheKanal = client.channels.cache.get(ayarlar.hosgeldinKanal)
-let mattheMember = member.user
-let mattheZaman = new Date().getTime() - mattheMember.createdAt.getTime()
-const matthe = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${client.emojis.cache.get(ayarlar.yes)}`//Youtube Matthe
-if(mattheZaman < 1296000000) {
-  matthe = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${client.emojis.cache.get(ayarlar.no)}`//Youtube Matthe
-}
+client.on("guildMemberAdd", member => {
+    require("moment-duration-format")
+      var üyesayısı = member.guild.members.cache.size.toString().replace(/ /g, "    ")
+      var üs = üyesayısı.match(/([0-9])/g)
+      üyesayısı = üyesayısı.replace(/([a-zA-Z])/g, "bilinmiyor").toLowerCase()
+      if(üs) {
+        üyesayısı = üyesayısı.replace(/([0-9])/g, d => {
+          return {
+            '0': `0`,
+            '1': `1`,
+            '2': `2`,
+            '3': `3`,
+            '4': `4`, // BOTUN OLDUĞU SUNUCUDA OLMA ŞARTI İLE HARAKETLİ EMOJİDE KOYABİLİRSİNİZ
+            '5': `5`,
+            '6': `6`,
+            '7': `7`,
+            '8': `8`,
+            '9': `9`}[d];})}
+    const kanal = member.guild.channels.cache.find(r => r.id === "HOS GELDİNİZ KANAL ID"); // HOŞGELDİNİZ KANAL İD
+    let user = client.users.cache.get(member.id);
+    require("moment-duration-format");
+      const kurulus = new Date().getTime() - user.createdAt.getTime();  
+     const gecen = moment.duration(kurulus).format(` YY **[Yıl]** DD **[Gün]** HH **[Saat]** mm **[Dakika,]**`) 
+    var kontrol;
+  if (kurulus < 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç!`
+  if (kurulus > 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+    moment.locale("tr");
   
 member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)//Youtube Matthe
-
-member.setNickname(`${ayarlar.tag} İsim ${ayarlar.sembol} Yaş`)
-mattheKanal.send(`
-Sunucumuza hoş geldin, ${member}! Sayende sunucumuz ${member.guild.memberCount.toString().split("").map(a => client.emojis.cache.get(mattheSayılar[a])).join("")} kişi.
-
+  
+    kanal.send(`
+Sunucumuza hoş geldin, <@`+ member + `>! Sayende sunucumuz **`+üyesayısı+`** kişi. 
+    
 Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
 
 Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
 
-${matthe}
-
-Ceza işlemlerin <#${ayarlar.rulesKanal}> kanalını okuduğun varsayılarak uygulanır. ( <@&${ayarlar.hosgeldinMesajYetkili}> )
-`)
-  
-})
+`+kontrol+`
+    
+Ceza işlemlerin <#KURALLAR KANAL ID> kanalını okuduğun varsayılarak uygulanır. ( <@&REGİSTER ROL ID> )`)});
 
 client.login(process.env.TOKEN)
 
