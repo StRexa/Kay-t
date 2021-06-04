@@ -61,8 +61,8 @@ client.on("guildMemberAdd", member => {
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
      const gecen = moment.duration(kurulus).format(` YY **[Yıl]** DD **[Gün]** HH **[Saat]** mm **[Dakika,]**`) 
     var kontrol;
-  if (kurulus < 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${ayarlar.no} `
-  if (kurulus > 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${ayarlar.yes} `
+  if (kurulus < 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! :x: `
+  if (kurulus > 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! :ballot_box_with_check: `
     moment.locale("tr");
   
 member.roles.add(ayarlar.kayıtsızRol)
@@ -70,15 +70,15 @@ member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)//Youtube Matthe
   
     kanal.send(`
-${ayarlar.hosgeldinEmoji} Sunucumuza hoş geldin, <@`+ member + `>! Sayende sunucumuz **`+üyesayısı+`** kişi. 
+Sunucumuza hoş geldin, <@`+ member + `>! Sayende sunucumuz **`+üyesayısı+`** kişi. 
     
-${ayarlar.hosgeldinEmoji} Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
+Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
 
-${ayarlar.hosgeldinEmoji} Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
+Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
 
-${ayarlar.hosgeldinEmoji} `+kontrol+`
+`+kontrol+`
     
-${ayarlar.hosgeldinEmoji} Ceza işlemlerin ${ayarlar.kurallarKanal} kanalını okuduğun varsayılarak uygulanır. ( ${ayarlar.hosgeldinMesajYetkili} )`)});
+Ceza işlemlerin <#KURALLAR KANALI ID> kanalını okuduğun varsayılarak uygulanır. ( <@&HOS GELDİN MESAJ YETKİLİ ROL ID> )`)});
 
 client.login(process.env.TOKEN)
 

@@ -22,12 +22,7 @@
     "tagRol" : "TAG ROL ID",
 
     "hosgeldinKanal" : "HOS GELDİN KANAL ID",
-    "hosgeldinMesajYetkili": "HOS GELDİN YETKİLİ ROL ID",
-    "hosgeldinMesajEmoji": "HOS GELDİN MESAJ EMOJİ",
-    "kurallarKanal" : "KURALLAR KANAL ID",
-
     "sohbetKanal" : "SOHBET KANALI ID", 
-  
     "botSesKanal" : "BOT SES KANALI ID",
   
     "yes" : "ONAY EMOJİSİ ID",
