@@ -55,14 +55,14 @@ client.on("guildMemberAdd", member => {
             '7': `7`,
             '8': `8`,
             '9': `9`}[d];})}
-    const kanal = member.guild.channels.cache.find(r => r.id === "HOS GELDİNİZ KANAL ID"); // HOŞGELDİNİZ KANAL İD
+    const kanal = member.guild.channels.cache.find(r => r.id === (ayarlar.hosgeldinKanal)); // HOŞGELDİNİZ KANAL İD
     let user = client.users.cache.get(member.id);
     require("moment-duration-format");
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
      const gecen = moment.duration(kurulus).format(` YY **[Yıl]** DD **[Gün]** HH **[Saat]** mm **[Dakika,]**`) 
     var kontrol;
-  if (kurulus < 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç!`
-  if (kurulus > 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor!`
+  if (kurulus < 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için daha çok genç! ${ayarlar.no} `
+  if (kurulus > 1296000000) kontrol = `Ve senin hesabın sunucumuza kayıt olmak için tüm şartları karşılıyor! ${ayarlar.yes} `
     moment.locale("tr");
   
 member.roles.add(ayarlar.kayıtsızRol)
@@ -70,15 +70,15 @@ member.roles.add(ayarlar.kayıtsızRol)
 member.roles.add(ayarlar.kayıtsızRol)//Youtube Matthe
   
     kanal.send(`
-Sunucumuza hoş geldin, <@`+ member + `>! Sayende sunucumuz **`+üyesayısı+`** kişi. 
+${ayarlar.hosgeldinEmoji} Sunucumuza hoş geldin, <@`+ member + `>! Sayende sunucumuz **`+üyesayısı+`** kişi. 
     
-Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
+${ayarlar.hosgeldinEmoji} Sunucumuza kayıt olmak için soldaki ses kanallarından birine girmelisin!
 
-Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
+${ayarlar.hosgeldinEmoji} Ayrıca hesabın 15 günden fazla bir süredir Discord'da bulunmalı.
 
-`+kontrol+`
+${ayarlar.hosgeldinEmoji} `+kontrol+`
     
-Ceza işlemlerin <#KURALLAR KANAL ID> kanalını okuduğun varsayılarak uygulanır. ( <@&REGİSTER ROL ID> )`)});
+${ayarlar.hosgeldinEmoji} Ceza işlemlerin ${ayarlar.kurallarKanal} kanalını okuduğun varsayılarak uygulanır. ( ${ayarlar.hosgeldinMesajYetkili} )`)});
 
 client.login(process.env.TOKEN)
 
