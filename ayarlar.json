@@ -1,30 +1,29 @@
-  {
-    "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz + Olarak emojileri ID olarak koymazsanız çalışmaz",
-    "OKUMADANGECME2" : "TOKEN .env kısmında TOKEN yazan yerin karşısına tokeninizi yapıstırınız.",
-    "OKUMADANGECME3" : "BOT BAZEN HATA ÇIKARDIĞI İÇİN HOŞ GELDİN EMOJİLERİ KALDIRILMIŞTIR.",
+{
+  "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz + Olarak emojileri ID olarak koymazsanız çalışmaz",
+  "OKUMADANGECME2" : "TOKEN .env kısmında TOKEN yazan yerin karşısına tokeninizi yapıstırınız.",
+  "OKUMADANGECME3" : "BOT BAZEN HATA ÇIKARDIĞI İÇİN HOŞ GELDİN EMOJİLERİ KALDIRILMIŞTIR.",
 
-    "sahip" : "ID'niz",
-    "prefix" : "Prefixiniz",
-    "footer" : "Adınız ❤️ Sunucu isminiz",
+  "sahip" : "745741118997528617",
+  "prefix" : ".",
+  "footer" : "❤️",
+  "token":"ODUzNjUyNzA5NDc0NTY2MTc1.YMYgCg.zcWVkI4xL1-aLc1ZdeY2k_t8QNQ",
 
-    "tag" : "Tagınız",
-    "sembol" : "Kayıt ederken isim ve yaşın arasına koyulacak sembol (yoksa boş bırakın)",
-  
-    "yetkiliRol" : ["YETKİLİ ROLÜ ID", "2. YOKSA BOŞ BIRAK", "3. YOKSA BOŞ BIRAK"],
-    "vipRol" : "VIP ROL ID",
-    "boosterRol" : "BOOSTER ROL ID",
-    "kayıtsızRol" : "KAYITSIZ ROL ID",
-    "erkekRol1" : "ERKEK ROL ID",
-    "erkekRol2" : "YOKSA BOŞ BIRAK",
-    "kadınRol1" : "KADIN ROL ID",
-    "kadınRol2" : "YOKSA BOŞ BIRAK",
+  "tag" : "∞",
+  "sembol" : "|",
 
-    "tagRol" : "TAG ROL ID",
+  "yetkiliRol" : ["853644041866051605", "853648129424621589", "853648200702492674"],
+  "vipRol" : "721133678180302905",
+  "boosterRol" : "750064543170035814",
+  "kayıtsızRol" : "853647282263425044",
+  "erkekRol1" : "853647541136916490",
+  "erkekRol2" : "721133678175977558",
+  "kadınRol1" : "721133678175977558",
+  "kadınRol2" : "853647665132994560",
 
-    "hosgeldinKanal" : "HOS GELDİN KANAL ID",
-    "sohbetKanal" : "SOHBET KANALI ID", 
-    "botSesKanal" : "BOT SES KANALI ID",
-  
-    "yes" : "ONAY EMOJİSİ ID",
-    "no" : "RED EMOJİSİ ID"
+  "hosgeldinKanal" : "796638404065361941",
+  "sohbetKanal" : "721133678796996743", 
+  "botSesKanal" : "853698196354498571",
+
+  "yes" : "<a:onaylandired:757351109546213576  ",
+  "no" : "<a:Onaylama:853651365624152084  "
 }
